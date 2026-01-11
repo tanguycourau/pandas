@@ -41,7 +41,7 @@ df.query(expr="A<@val&B>6")
 ## Apply
 df.loc['s']=df.apply(np.sum)
 df.apply(lambda x: np.square(x) if x.name != 'F' else x, axis=0)
-
+df['F']=df.apply(lambda x:x.F+'hi', axis=1)
 
 
 ## Multi level columns
