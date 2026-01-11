@@ -4,7 +4,7 @@ import numpy as np
 # un dataframe tout simple
 
 df = pd.DataFrame.from_dict({'A': [1.1, 2.7, 5.3], 'B': [2, 10, 9],
-    'C': [3.3, 5.4, 1.5], 'D': [4, 7, 15]})
+    'C': [3.3, 5.4, 1.5]})
 
 
 df.columns.name='col'
@@ -17,14 +17,17 @@ df[['A', 'C']]
 df.loc[:,['A', 'C']]
 df.loc[[0, 2], ['A', 'C']]
 
-df['E'] = [9, 10, 11]
-df.loc[3] = [11,12,13,14,15]
+df['D'] = [9, 10, 11]
+df.loc[3] = [11,12,13,14]
 
-df.index= ['u','v','w','t']
+df.index= ['u','v','w', 't']
 df.index.name='row' 
 df.loc['v']
 
-#df.reset_index(drop=True)
+df['E'] = df['A']+df['B'] 
+
+
+df.reset_index(drop=False)
 
 df.transpose()
 
